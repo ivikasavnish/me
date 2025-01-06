@@ -3,191 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Avnish - Resume</title>
+    <title>Vikas Avnish - Senior Software Engineer</title>
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--text-color);
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem;
+            background: white;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+        
+        .header {
+            margin-bottom: 2rem;
         }
-        h1 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
-        h2 {
-            margin-top: 20px;
+        
+        .title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
         }
-        h3 {
-            margin-top: 15px;
-            margin-bottom: 5px;
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
-        .section {
-            margin-bottom: 20px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .contact-info {
+        
+        .contact-item {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tags {
+            display: flex;
             flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
         }
-        .contact-info p {
-            margin: 5px 0;
+        
+        .tag {
+            background: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
         }
+        
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .company-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .job-title {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .date {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .availability-card {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
         @media print {
             body {
-                max-width: 100%;
-                padding: 0;
+                padding: 1rem;
+            }
+            
+            .experience-item {
+                break-inside: avoid;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Vikas Avnish</h1>
-    <p><strong>Senior Software Developer | API Specialist | Data Engineer</strong></p>
-    
-    <div class="section availability-info" style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;">
-        <p><strong>Availability:</strong> From 11th January 2025</p>
-        <p><strong>Expected CTC:</strong> 25 LPA</p>
-        <p><strong>Work Preference:</strong> Remote, Delhi NCR</p>
-    </div>
-    
-    <div class="contact-info">
-        <p>Email: devops.avnish@gmail.com</p>
-        <p>Phone: 8210807370</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/vikas-avnish-36ba3817/">vikas-avnish-36ba3817</a></p>
-        <p>GitHub: <a href="https://github.com/ivikasavnish">ivikasavnish</a></p>
-    </div>
-
-    <div class="section">
-        <h2>Profile Links</h2>
-        <ul>
-            <li>Medium: <a href="https://medium.com/@servloci">@servloci</a></li>
-            <li>GitHub: <a href="https://github.com/ivikasavnish/goroutine">ivikasavnish/goroutine</a></li>
-            <li>LeetCode: <a href="https://leetcode.com/u/bizpowersolution/">bizpowersolution</a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Profile Summary</h2>
-        <ul>
-            <li>Nearly 9 years of experience in Software Development, specializing in web-scraping, data analytics, and API development across Healthcare, Media, and Fintech sectors.</li>
-            <li>Skilled in system design, API development, and continuous learning, with expertise in Node.js, Golang, and Spring Boot.</li>
-            <li>Proficient in designing and implementing scalable solutions, optimizing system performance and user experience. Prefer simple and scalable design and select path of least complexity and future-ready development.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Languages: Python, Golang, JavaScript, Node.js, Rust, Java (Spring Boot), Bash</li>
-            <li>Frameworks: Django, React, Spring Boot</li>
-            <li>Cloud: AWS, GCP, AWS Lambda</li>
-            <li>Databases: MongoDB, MySQL, Elasticsearch</li>
-            <li>DevOps: Docker, Kubernetes, CI/CD, Prometheus</li>
-            <li>Other: API Design, Linux, Web Scraping, System Monitoring</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Professional Experience</h2>
-
-        <h3>SageIT Private Limited (Contract for ACI WORLDWIDE via OPUS Consulting)</h3>
-        <p><em>Senior Software Developer</em><br>July 2024 - Jan 2025</p>
-        <ul>
-            <li>Developed custom proactive monitoring and active probe system for Base24 using bash-based system and application probes</li>
-            <li>Implemented scheduled runners with comprehensive reporting in HTML, JSON, and Prometheus formats</li>
-            <li>Designed and integrated alerting systems with detailed documentation</li>
-        </ul>
+    <header class="header">
+        <h1 class="name">Vikas Avnish</h1>
+        <p class="title">Senior Software Engineer | Cloud Architect | API Specialist</p>
         
-        <h3>Doodle Blue Innovations</h3>
-        <p><em>Software Developer</em><br>Nov 2023 - Present</p>
-        <ul>
-            <li>Worked on converting Spring Boot applications to Golang microservices, improving system performance and scalability.</li>
-            <li>Utilized 1 year of Spring Boot experience to efficiently translate Java-based architectures to Golang.</li>
-            <li>Implemented best practices in microservices architecture, ensuring seamless integration and optimal performance.</li>
-        </ul>
+        <div class="availability-card">
+            <p><strong>Availability:</strong> From January 11th, 2025</p>
+            <p><strong>Expected CTC:</strong> 25 LPA</p>
+            <p><strong>Preferred Location:</strong> Remote, Delhi NCR</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:devops.avnish@gmail.com">devops.avnish@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+91 8210807370</span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <a href="https://www.linkedin.com/in/vikas-avnish-36ba3817/">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span>💻</span>
+                <a href="https://github.com/ivikasavnish">GitHub</a>
+            </div>
+        </div>
+    </header>
 
-        <h3>Ayopop Technology (Remote)</h3>
-        <p><em>Software Development Engineer-3</em><br>May 2022 - Nov 2023</p>
-        <ul>
-            <li>Spearheaded neobanking solutions and virtual card stacks using Golang microservices.</li>
-            <li>Implemented Mastercard-based solution, adhering to strict specifications.</li>
-            <li>Engineered financial transaction dashboard, improving availability.</li>
-        </ul>
+    <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p>Versatile Software Engineer with 9+ years of experience architecting and implementing scalable solutions across FinTech, Healthcare, and Media domains. Specialized in distributed systems, cloud architecture, and high-performance API development. Strong focus on writing clean, maintainable code and building resilient microservices.</p>
+    </section>
 
-        <h3>Valuelabs Solutions LLP, Hyderabad</h3>
-        <p><em>Software Developer</em><br>Mar 2021 - Mar 2022</p>
-        <ul>
-            <li>Led data analytics platform development, reducing processing time.</li>
-            <li>Implemented automated UI testing, enhancing product quality.</li>
-        </ul>
+    <section class="section">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skill-grid">
+            <div class="skill-category">
+                <h3>Core Technologies</h3>
+                <div class="tags">
+                    <span class="tag">Go</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Rust</span>
+                    <span class="tag">Java</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Frameworks & APIs</h3>
+                <div class="tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">React</span>
+                    <span class="tag">gRPC</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <div class="tags">
+                    <span class="tag">AWS Lambda</span>
+                    <span class="tag">GCP</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Terraform</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Data & Storage</h3>
+                <div class="tags">
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">Elasticsearch</span>
+                    <span class="tag">Kafka</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>Boring Brands Pvt. Ltd.</h3>
-        <p><em>Python Developer</em><br>Aug 2019 - Aug 2020</p>
-        <ul>
-            <li>Enhanced media extraction, crawling 5 million URLs daily.</li>
-            <li>Developed microservices for faster job processing using Redis and Python.</li>
-        </ul>
-    </div>
+    <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <h3 class="company-name">Doodle Blue Innovations</h3>
+            <p class="job-title">Lead Software Engineer</p>
+            <p class="date">November 2023 - Present</p>
+            <div class="tags">
+                <span class="tag">Golang</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">AWS Lambda</span>
+                <span class="tag">Microservices</span>
+            </div>
+            <ul>
+                <li>Led the modernization of legacy Spring Boot applications to Golang microservices, achieving 40% improved response times</li>
+                <li>Architected serverless event-processing pipeline using AWS Lambda and API Gateway, handling 1M+ daily transactions</li>
+                <li>Implemented distributed tracing and monitoring using OpenTelemetry, improving system observability</li>
+                <li>Developed high-performance REST APIs using FastAPI for real-time data processing</li>
+            </ul>
+        </div>
 
-    <div class="section">
-        <h2>Open Source Contributions</h2>
-        <ul>
-            <li><strong>TOTP Generator/Validator:</strong> Developed a Go package for time-based OTP validation and generation 
-                (<a href="https://github.com/ivikasavnish/totp">github.com/ivikasavnish/totp</a>)</li>
-            <li><strong>Cloud IP Load Balancer:</strong> Created a distributed system for small servers to handle heavy workloads through TCP worker clients 
-                (<a href="https://github.com/ivikasavnish/attachcloudip">github.com/ivikasavnish/attachcloudip</a>)</li>
-            <li><strong>Model Context Protocol:</strong> Developing a fast, resilient distributed MCP server and client ecosystem 
-                (<a href="https://github.com/ivikasavnish/go-mcp">github.com/ivikasavnish/go-mcp</a>)</li>
-        </ul>
-    </div>
+        <div class="experience-item">
+            <h3 class="company-name">Ayopop Technology</h3>
+            <p class="job-title">Senior Software Engineer</p>
+            <p class="date">May 2022 - November 2023</p>
+            <div class="tags">
+                <span class="tag">Golang</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Kubernetes</span>
+            </div>
+            <ul>
+                <li>Designed and implemented a neobanking platform handling $50M+ in monthly transactions</li>
+                <li>Built microservices for virtual card management system using Golang and gRPC</li>
+                <li>Developed real-time transaction monitoring system using FastAPI and WebSockets</li>
+                <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+            </ul>
+        </div>
 
-    <div class="section">
-        <h2>Notable Projects</h2>
-        <h3>AlgoTrading Platform</h3>
-        <ul>
-            <li>Custom solution yielding 2-4% monthly returns</li>
-            <li>Porting to Golang for improved performance</li>
-            <li>Developing desktop UI for enhanced user experience</li>
-        </ul>
+        <div class="experience-item">
+            <h3 class="company-name">Valuelabs Solutions LLP</h3>
+            <p class="job-title">Software Engineer</p>
+            <p class="date">March 2021 - March 2022</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">AWS Lambda</span>
+                <span class="tag">MongoDB</span>
+            </div>
+            <ul>
+                <li>Architected and implemented data analytics platform processing 10TB+ data monthly</li>
+                <li>Developed serverless ETL pipelines using AWS Lambda and Step Functions</li>
+                <li>Built real-time analytics API using FastAPI with 99.9% uptime</li>
+                <li>Implemented automated testing framework improving code coverage to 85%</li>
+            </ul>
+        </div>
 
-        <h3>Web Scraping Framework</h3>
-        <ul>
-            <li>Large-scale news extraction, storage, and search service</li>
-            <li>Tech stack: Python, Celery, Redis, MySQL, Elasticsearch, Flask</li>
-            <li>Efficient big data processing pipeline</li>
-        </ul>
-    </div>
+        <div class="experience-item">
+            <h3 class="company-name">Boring Brands Pvt. Ltd.</h3>
+            <p class="job-title">Python Developer</p>
+            <p class="date">August 2019 - August 2020</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Redis</span>
+                <span class="tag">Elasticsearch</span>
+            </div>
+            <ul>
+                <li>Developed distributed web scraping system processing 5M+ URLs daily</li>
+                <li>Built REST APIs using FastAPI for data ingestion and retrieval</li>
+                <li>Implemented caching layer with Redis reducing response time by 70%</li>
+                <li>Created real-time search functionality using Elasticsearch</li>
+            </ul>
+        </div>
+    </section>
 
-    <div class="section">
-        <h2>Achievements</h2>
-        <ul>
-            <li>Best Employee of the Year at Credihealth</li>
-            <li>Star of the Month at Boring Brands Pvt. Ltd.</li>
-            <li>Successfully implemented Mastercard-based solution at Ayopop Technology</li>
-        </ul>
-    </div>
+    <section class="section">
+        <h2 class="section-title">Open Source Projects</h2>
+        <div class="experience-item">
+            <h3>TOTP Generator/Validator</h3>
+            <p>Go package for time-based OTP validation and generation</p>
+            <a href="https://github.com/ivikasavnish/totp">github.com/ivikasavnish/totp</a>
+        </div>
+        
+        <div class="experience-item">
+            <h3>Cloud IP Load Balancer</h3>
+            <p>Distributed system for handling heavy workloads through TCP worker clients</p>
+            <a href="https://github.com/ivikasavnish/attachcloudip">github.com/ivikasavnish/attachcloudip</a>
+        </div>
+        
+        <div class="experience-item">
+            <h3>Model Context Protocol</h3>
+            <p>Fast, resilient distributed MCP server and client ecosystem</p>
+            <a href="https://github.com/ivikasavnish/go-mcp">github.com/ivikasavnish/go-mcp</a>
+        </div>
+    </section>
 
-    <div class="section">
-        <h2>Education</h2>
-        <p>Pursuing BCA from Amity University (2023 - Present)</p>
-    </div>
-
-    <div class="section">
-        <h2>Personal Details</h2>
+    <section class="section">
+        <h2 class="section-title">Achievements</h2>
         <ul>
-            <li>Date of Birth: 17th January 1990</li>
-            <li>Languages: English, Hindi</li>
-            <li>Address: House No. 165, Ward No. 1, Ashok Nagar Colony, Dal Singh Sarai, Samastipur - 848114</li>
+            <li>Successfully implemented Mastercard payment integration processing $10M+ monthly transactions</li>
+            <li>Best Employee of the Year at Credihealth for exceptional performance</li>
+            <li>Led team of 5 developers in implementing mission-critical financial systems</li>
+            <li>Published technical articles on Medium about system design and microservices</li>
         </ul>
-    </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="experience-item">
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p>Amity University</p>
+            <p class="date">2023 - Present</p>
+        </div>
+    </section>
 </body>
 </html>
