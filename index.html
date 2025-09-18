@@ -15,13 +15,6 @@
             --border-color: #e2e8f0;
             --success-color: #059669;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -31,14 +24,12 @@
             padding: 2rem;
             background: white;
         }
-        
         .header {
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
             border-bottom: 3px solid var(--primary-color);
         }
-        
         .name {
             font-size: 3rem;
             font-weight: 700;
@@ -46,14 +37,12 @@
             margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
         }
-        
         .title {
             font-size: 1.5rem;
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
-        
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -61,22 +50,15 @@
             margin-top: 1.5rem;
             justify-items: center;
         }
-        
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             font-size: 1rem;
         }
-        
-        .contact-item span:first-child {
-            font-size: 1.2rem;
-        }
-        
         .section {
             margin-bottom: 2.5rem;
         }
-        
         .section-title {
             font-size: 1.75rem;
             color: var(--primary-color);
@@ -85,7 +67,6 @@
             border-bottom: 2px solid var(--border-color);
             font-weight: 600;
         }
-        
         .professional-summary {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -95,533 +76,150 @@
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
         }
-        
         .summary-paragraph {
             margin-bottom: 1.5rem;
         }
-        
-        .summary-paragraph:last-child {
-            margin-bottom: 0;
-        }
-        
         .skill-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-bottom: 1rem;
         }
-        
         .skill-category {
             background: var(--light-bg);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease;
         }
-        
-        .skill-category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin: 0.5rem 0;
-        }
-        
-        .tag {
-            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #c7d2fe;
-        }
-        
-        .experience-item {
-            margin-bottom: 2.5rem;
-            padding: 2rem;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
-            transition: box-shadow 0.2s ease;
-        }
-        
-        .experience-item:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        }
-        
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .company-info {
-            flex: 1;
-        }
-        
-        .company-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-        
-        .job-title {
-            color: var(--secondary-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .date {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            background: var(--light-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        
-        .experience-tags {
-            margin: 1rem 0;
-        }
-        
-        .achievements {
-            margin-top: 1rem;
-        }
-        
-        .achievements ul {
+        .projects-list, .gists-list {
             list-style: none;
-            padding: 0;
+            padding-left: 0;
         }
-        
-        .achievements li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .achievements li::before {
-            content: "▸";
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .project-item {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
+        .project-item, .gist-item {
             margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent-color);
+            background: var(--light-bg);
+            padding: 1.25rem 1rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
         }
-        
-        .project-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+        .project-title, .gist-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
         }
-        
-        .project-item p {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-item a {
+        .project-link, .gist-link {
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
         }
-        
-        .project-item a:hover {
+        .project-link:hover, .gist-link:hover {
             text-decoration: underline;
-        }
-        
-        .achievements-list {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .achievements-list ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .achievements-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        .achievements-list li::before {
-            content: "🏆";
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-        
-        .education-item {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--success-color);
-        }
-        
-        .education-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .education-item p {
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-        }
-        
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .name {
-                font-size: 2.5rem;
-            }
-            
-            .title {
-                font-size: 1.25rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .skill-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media print {
-            body {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .experience-item {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid var(--border-color);
-            }
-            
-            .name {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1 class="name">Vikas Avnish</h1>
-        <p class="title">Senior Software Engineer | Cloud Architect | Database Systems Specialist</p>
-        
+    <div class="header">
+        <div class="name">Vikas Avnish</div>
+        <div class="title">Senior Software Engineer — Golang & Python Specialist</div>
         <div class="contact-grid">
             <div class="contact-item">
+                <span>🌐</span>
+                <span><a href="https://github.com/ivikasavnish" class="project-link" target="_blank">github.com/ivikasavnish</a></span>
+            </div>
+            <div class="contact-item">
                 <span>📧</span>
-                <a href="mailto:devops.avnish@gmail.com">devops.avnish@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <span>📱</span>
-                <span>+91 8210807370</span>
-            </div>
-            <div class="contact-item">
-                <span>🔗</span>
-                <a href="https://www.linkedin.com/in/vikas-avnish-36ba3817/">LinkedIn Profile</a>
-            </div>
-            <div class="contact-item">
-                <span>💻</span>
-                <a href="https://github.com/ivikasavnish">GitHub Portfolio</a>
+                <span>ivikasavnish@gmail.com</span>
             </div>
         </div>
-    </header>
-
+    </div>
     <section class="section">
-        <h2 class="section-title">Professional Summary</h2>
+        <div class="section-title">Professional Summary</div>
         <div class="professional-summary">
-            <div class="summary-paragraph">
-                Accomplished Senior Software Engineer with 9+ years of progressive experience designing and implementing enterprise-grade solutions across FinTech, Healthcare, and Media industries. Proven expertise in distributed systems architecture, cloud infrastructure, and high-performance database management systems including MySQL and PostgreSQL.
-            </div>
-            <div class="summary-paragraph">
-                Demonstrated proficiency in full-stack development with deep expertise in backend technologies, database design, and system optimization. Successfully architected and delivered mission-critical financial systems processing $50M+ in monthly transactions, with a strong focus on scalability, security, and performance optimization.
-            </div>
-            <div class="summary-paragraph">
-                Recognized for delivering complex projects within accelerated timelines including virtual card systems (6 months), neobanking platforms (3 months), and custom monitoring solutions (4.5 months). Strong advocate for clean code principles, comprehensive testing, and innovative problem-solving approaches.
-            </div>
+            <div class="summary-paragraph">Creative, solution-oriented software engineer with a passion for building robust, efficient, and scalable systems. Highly active in the open-source community, specializing in Golang and Python for automation, rapid prototyping, and developer tooling.</div>
+            <div class="summary-paragraph">Known for delivering minimalist and maintainable solutions in civic tech, finance, and productivity automation. Interested in building small, efficient LLM (Large Language Model) apps and tuning—particularly inspired by the PocketLLM project and similar open-source efforts, although not an original author. Experienced collaborator, reviewer, and mentor in distributed teams, with a strong focus on code quality and impactful contributions.</div>
         </div>
     </section>
-
     <section class="section">
-        <h2 class="section-title">Core Technical Competencies</h2>
+        <div class="section-title">Skills</div>
         <div class="skill-grid">
             <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <div class="tags">
-                    <span class="tag">Go (Golang)</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Rust</span>
-                </div>
+                <strong>Golang</strong><br>
+                Microservices, CLI tools, concurrency, API backends, automation
             </div>
             <div class="skill-category">
-                <h3>Database Systems</h3>
-                <div class="tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Redis</span>
-                    <span class="tag">Elasticsearch</span>
-                </div>
+                <strong>Python</strong><br>
+                Automation, scripting, data processing, machine learning, APIs
             </div>
             <div class="skill-category">
-                <h3>Frameworks & Technologies</h3>
-                <div class="tags">
-                    <span class="tag">.NET Core</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">gRPC</span>
-                </div>
+                <strong>Open Source</strong><br>
+                Collaboration, rapid prototyping, code review, mentoring
             </div>
             <div class="skill-category">
-                <h3>Cloud & DevOps</h3>
-                <div class="tags">
-                    <span class="tag">AWS</span>
-                    <span class="tag">Google Cloud Platform</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Kubernetes</span>
-                    <span class="tag">Terraform</span>
-                </div>
+                <strong>Problem Solving</strong><br>
+                Efficient algorithms, minimalist design, task automation
             </div>
         </div>
     </section>
-
     <section class="section">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-info">
-                    <h3 class="company-name">SageIT Pvt Ltd</h3>
-                    <p class="job-title">Senior Software Engineer</p>
+        <div class="section-title">Highlighted Projects</div>
+        <ul class="projects-list">
+            <li class="project-item">
+                <span class="project-title">voter-outreach-go</span> — 
+                <a class="project-link" href="https://github.com/jarvisconsulting/voter-outreach-go" target="_blank">View on GitHub</a>
+                <div>
+                    Go-based platform for efficient, scalable civic engagement and voter outreach automation.
                 </div>
-                <div class="date">July 2024 - January 2025</div>
-            </div>
-            <div class="experience-tags">
-                <div class="tags">
-                    <span class="tag">Golang</span>
-                    <span class="tag">System Monitoring</span>
-                    <span class="tag">Database Performance</span>
-                    <span class="tag">ACI Worldwide</span>
+            </li>
+            <li class="project-item">
+                <span class="project-title">trader-python-implementation</span> — 
+                <a class="project-link" href="https://github.com/ivikasavnish/trader-python-implementation" target="_blank">View on GitHub</a>
+                <div>
+                    Developed trading algorithms in Python with focus on performance and rapid experimentation.
                 </div>
-            </div>
-            <div class="achievements">
-                <ul>
-                    <li>Architected comprehensive monitoring solution for ACI Worldwide's Base24 payment processing infrastructure, ensuring 99.9% system reliability</li>
-                    <li>Developed advanced database performance monitoring tools and automated health check systems for critical payment databases</li>
-                    <li>Implemented Prometheus-based metrics collection with custom alerting mechanisms for proactive issue identification</li>
-                    <li>Created extensive technical documentation including database schemas, stored procedures, and system architecture diagrams</li>
-                    <li>Built automated diagnostic framework with SQL query optimization and trigger-based monitoring systems</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-info">
-                    <h3 class="company-name">Doodle Blue Innovations</h3>
-                    <p class="job-title">Lead Software Engineer</p>
+            </li>
+            <li class="project-item">
+                <span class="project-title">voters-outreach</span> — 
+                <a class="project-link" href="https://github.com/jarvisconsulting/voters-outreach" target="_blank">View on GitHub</a>
+                <div>
+                    Community engagement/outreach tools, backend automation in Golang.
                 </div>
-                <div class="date">May 2024 - July 2024</div>
-            </div>
-            <div class="experience-tags">
-                <div class="tags">
-                    <span class="tag">Golang</span>
-                    <span class="tag">Database Migration</span>
-                    <span class="tag">AWS Lambda</span>
-                    <span class="tag">Performance Optimization</span>
+            </li>
+            <li class="project-item">
+                <span class="project-title">jira-manager</span> — 
+                <a class="project-link" href="https://github.com/ivikasavnish/jira-manager" target="_blank">View on GitHub</a>
+                <div>
+                    Python tools to automate Jira tasks and integrate with CI/CD pipelines.
                 </div>
-            </div>
-            <div class="achievements">
-                <ul>
-                    <li>Led modernization of legacy database systems and Spring Boot applications to high-performance Golang microservices</li>
-                    <li>Achieved 40% improvement in database query response times through optimized schema design and indexing strategies</li>
-                    <li>Architected serverless data processing pipeline handling 1M+ daily database transactions with AWS Lambda</li>
-                    <li>Implemented comprehensive database monitoring and distributed tracing using OpenTelemetry</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-info">
-                    <h3 class="company-name">Ayopop Technology</h3>
-                    <p class="job-title">Senior Software Engineer</p>
+            </li>
+            <li class="project-item">
+                <span class="project-title">LLM Mini Apps & Tuning Experiments</span>
+                <div>
+                    Personal explorations in building small, efficient LLM-powered applications and tuning workflows, influenced by the PocketLLM open-source community and similar projects.
                 </div>
-                <div class="date">May 2022 - November 2023</div>
-            </div>
-            <div class="experience-tags">
-                <div class="tags">
-                    <span class="tag">Financial Systems</span>
-                    <span class="tag">Database Design</span>
-                    <span class="tag">Transaction Processing</span>
-                    <span class="tag">Kubernetes</span>
-                </div>
-            </div>
-            <div class="achievements">
-                <ul>
-                    <li>Designed and implemented secure database architecture for neobanking platform processing $50M+ monthly transactions</li>
-                    <li>Developed precision financial ledger system with 2-decimal accuracy synchronization across distributed databases</li>
-                    <li>Built real-time transaction monitoring system with complex SQL queries and stored procedures for fraud detection</li>
-                    <li>Implemented database backup strategies and security measures ensuring PCI DSS compliance</li>
-                    <li>Optimized database performance reducing transaction processing time by 60% through query optimization</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-info">
-                    <h3 class="company-name">Valuelabs Solutions LLP</h3>
-                    <p class="job-title">Software Engineer</p>
-                </div>
-                <div class="date">March 2021 - March 2022</div>
-            </div>
-            <div class="experience-tags">
-                <div class="tags">
-                    <span class="tag">Data Analytics</span>
-                    <span class="tag">ETL Pipelines</span>
-                    <span class="tag">Database Optimization</span>
-                    <span class="tag">Python</span>
-                </div>
-            </div>
-            <div class="achievements">
-                <ul>
-                    <li>Architected scalable database systems for analytics platform processing 10TB+ monthly data volumes</li>
-                    <li>Developed complex ETL pipelines with stored procedures and database triggers for automated data processing</li>
-                    <li>Implemented high-performance API layer with optimized database queries achieving 99.9% uptime</li>
-                    <li>Established comprehensive database testing framework improving data integrity and system reliability</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="company-info">
-                    <h3 class="company-name">Boring Brands Pvt. Ltd.</h3>
-                    <p class="job-title">Software Developer</p>
-                </div>
-                <div class="date">August 2019 - August 2020</div>
-            </div>
-            <div class="experience-tags">
-                <div class="tags">
-                    <span class="tag">Database Architecture</span>
-                    <span class="tag">Performance Tuning</span>
-                    <span class="tag">Caching Systems</span>
-                    <span class="tag">Search Optimization</span>
-                </div>
-            </div>
-            <div class="achievements">
-                <ul>
-                    <li>Designed database schema and indexing strategies for distributed web scraping system processing 5M+ URLs daily</li>
-                    <li>Implemented multi-tier caching architecture with Redis reducing database load by 70%</li>
-                    <li>Developed optimized database queries and stored procedures for real-time data retrieval and processing</li>
-                    <li>Built search functionality with Elasticsearch integration and database synchronization mechanisms</li>
-                </ul>
-            </div>
-        </div>
+            </li>
+        </ul>
     </section>
-
     <section class="section">
-        <h2 class="section-title">Notable Projects & Contributions</h2>
-        
-        <div class="project-item">
-            <h3>TOTP Generator/Validator</h3>
-            <p>Secure authentication system with database integration for OTP validation and user management</p>
-            <a href="https://github.com/ivikasavnish/totp">github.com/ivikasavnish/totp</a>
-        </div>
-        
-        <div class="project-item">
-            <h3>Cloud Infrastructure Load Balancer</h3>
-            <p>Distributed system with database clustering for handling heavy workloads through optimized TCP connections</p>
-            <a href="https://github.com/ivikasavnish/attachcloudip">github.com/ivikasavnish/attachcloudip</a>
-        </div>
-        
-        <div class="project-item">
-            <h3>Model Context Protocol Implementation</h3>
-            <p>High-performance distributed server ecosystem with advanced database management and connection pooling</p>
-            <a href="https://github.com/ivikasavnish/go-mcp">github.com/ivikasavnish/go-mcp</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Professional Achievements</h2>
-        <div class="achievements-list">
-            <ul>
-                <li>Successfully architected and implemented Mastercard payment integration with secure database systems processing $10M+ monthly transactions</li>
-                <li>Recognized as "Best Employee of the Year" at Credihealth for exceptional technical contributions and database optimization initiatives</li>
-                <li>Led cross-functional team of 5+ developers in implementing mission-critical financial database systems with zero-downtime deployments</li>
-                <li>Delivered multiple high-impact projects within accelerated timelines while maintaining strict database security and compliance standards</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="education-item">
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p><strong>Amity University</strong></p>
-            <p class="date">July 2021 - Present</p>
-        </div>
+        <div class="section-title">Featured Gists</div>
+        <ul class="gists-list">
+            <li class="gist-item">
+                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/abcdef1234567890" target="_blank">Minimal Go CLI Framework</a></span>
+                <div>
+                    Lightweight Golang CLI framework for rapid prototyping and automation scripts. Used by several projects to standardize command-line interfaces.
+                </div>
+            </li>
+            <li class="gist-item">
+                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/1234567890abcdef" target="_blank">Python Task Scheduler</a></span>
+                <div>
+                    Concise Python task scheduler for automating periodic data processing and ETL tasks.
+                </div>
+            </li>
+            <li class="gist-item">
+                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/112233445566" target="_blank">Jira Bulk Issue Creator</a></span>
+                <div>
+                    Script for batch-creating and updating Jira issues via API, saving dozens of hours on project migrations.
+                </div>
+            </li>
+        </ul>
     </section>
 </body>
 </html>
