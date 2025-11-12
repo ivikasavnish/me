@@ -114,6 +114,40 @@
         .project-link:hover, .gist-link:hover {
             text-decoration: underline;
         }
+        /* Experience styles */
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .experience-item {
+            margin-bottom: 1.5rem;
+            background: var(--light-bg);
+            padding: 1.25rem 1rem;
+            border-left: 4px solid var(--success-color);
+            border-radius: 8px;
+        }
+        .experience-org {
+            font-weight: 600;
+            color: var(--success-color);
+        }
+        .experience-role {
+            font-size: 1.15rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        .experience-period {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .experience-location {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .experience-desc {
+            color: var(--text-color);
+            margin-top: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -134,10 +168,112 @@
     <section class="section">
         <div class="section-title">Professional Summary</div>
         <div class="professional-summary">
-            <div class="summary-paragraph">Creative, solution-oriented software engineer with a passion for building robust, efficient, and scalable systems. Highly active in the open-source community, specializing in Golang and Python for automation, rapid prototyping, and developer tooling.</div>
-            <div class="summary-paragraph">Known for delivering minimalist and maintainable solutions in civic tech, finance, and productivity automation. Interested in building small, efficient LLM (Large Language Model) apps and tuning—particularly inspired by the PocketLLM project and similar open-source efforts, although not an original author. Experienced collaborator, reviewer, and mentor in distributed teams, with a strong focus on code quality and impactful contributions.</div>
+            <div class="summary-paragraph">Creative, solution-oriented software engineer with a passion for building robust, efficient, and scalable systems. Highly active in the open-source community[...]
+            <div class="summary-paragraph">Known for delivering minimalist and maintainable solutions in civic tech, finance, and productivity automation. Interested in building small, efficient LLM ([...]
         </div>
     </section>
+
+    <!-- Experience Section: All Roles Chronologically -->
+    <section class="section">
+        <div class="section-title">Experience</div>
+        <ul class="experience-list">
+            <li class="experience-item">
+                <div class="experience-role">Software Engineer (Adhoc)</div>
+                <div class="experience-org">Jarvis Technology and Strategy Consulting</div>
+                <div class="experience-period">Feb 2025 – Present</div>
+                <div class="experience-location"></div>
+                <div class="experience-desc">
+                    Developing voter module for the biggest political party in India and an internal communication tool (CRM SARAL) on an adhoc basis. Delivering mission-critical solutions for civic technology and enterprise communication.
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Senior Software Developer</div>
+                <div class="experience-org">Sageit Private LTD</div>
+                <div class="experience-period">July 2024 – January 2025 (7 months)</div>
+                <div class="experience-location">Pune, Maharashtra, India</div>
+                <div class="experience-desc">
+                    Architected and implemented comprehensive monitoring for ACI Worldwide's Base24 payment stack.<br>
+                    Developed custom probes in Golang for HTTP/TCP monitoring; advanced metrics extraction.<br>
+                    Built automated system health checks and process monitoring tools for critical payment infrastructure.<br>
+                    Designed Prometheus-based alerting and metrics system.<br>
+                    Created technical documentation (design, deployment, troubleshooting).<br>
+                    Implemented DB performance monitoring and health tracking.<br>
+                    Developed bash execution framework for diagnostic automations.<br>
+                    Achieved 99.9% monitoring accuracy for payment infrastructure.
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Software Engineer</div>
+                <div class="experience-org">Ayoconnect</div>
+                <div class="experience-period">May 2022 – November 2023 (1 year 7 months)</div>
+                <div class="experience-location">India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Software Developer</div>
+                <div class="experience-org">ValueLabs</div>
+                <div class="experience-period">March 2021 – May 2022 (1 year 3 months)</div>
+                <div class="experience-location">Hyderabad, Telangana, India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Golang Developer</div>
+                <div class="experience-org">Freelance</div>
+                <div class="experience-period">September 2020 – May 2022 (1 year 9 months)</div>
+                <div class="experience-location">Gurugram, Haryana, India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Python Developer</div>
+                <div class="experience-org">Wizikey</div>
+                <div class="experience-period">August 2019 – August 2020 (1 year 1 month)</div>
+                <div class="experience-location">Gurgaon, India</div>
+                <div class="experience-desc">
+                    Developed and deployed News Crawler System with Scrapy, Redis, S3, Elasticsearch, and MySQL.<br>
+                    Deployment with Docker, AWS, Jenkins, Git; CI/CD enabled rapid updates.
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Data Analyst</div>
+                <div class="experience-org">Credihealth</div>
+                <div class="experience-period">October 2018 – August 2019 (11 months)</div>
+                <div class="experience-location">Gurgaon, India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Digital Marketing Manager</div>
+                <div class="experience-org">Credihealth</div>
+                <div class="experience-period">April 2018 – August 2019 (1 year 5 months)</div>
+                <div class="experience-location">Gurgaon, India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Digital Marketing Specialist</div>
+                <div class="experience-org">Credihealth</div>
+                <div class="experience-period">February 2017 – March 2018 (1 year 2 months)</div>
+                <div class="experience-location">Gurgaon, India</div>
+                <div class="experience-desc"></div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Digital Specialist</div>
+                <div class="experience-org">AMICI Global Solutions PVT. LTD.</div>
+                <div class="experience-period">October 2015 – February 2017 (1 year 5 months)</div>
+                <div class="experience-desc">
+                    SEO, SMO, Analytics.<br>
+                    Website design and development (Consulting); Content Development (Consulting); Digital Marketing (Main Work); Analytics (Main Work).
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="experience-role">Marketing Analyst</div>
+                <div class="experience-org">GemPundit.com</div>
+                <div class="experience-period">December 2014 – September 2015 (10 months)</div>
+                <div class="experience-desc">
+                    Conducted marketing activities and performance analysis for strategic planning.
+                </div>
+            </li>
+        </ul>
+    </section>
+
     <section class="section">
         <div class="section-title">Skills</div>
         <div class="skill-grid">
