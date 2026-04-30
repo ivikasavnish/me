@@ -148,6 +148,19 @@
             color: var(--text-color);
             margin-top: 0.25rem;
         }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        @media print {
+            body { padding: 1rem; }
+            .project-link, .gist-link { color: var(--text-color); text-decoration: none; }
+            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: var(--text-secondary); }
+        }
     </style>
 </head>
 <body>
@@ -162,6 +175,14 @@
             <div class="contact-item">
                 <span>📧</span>
                 <span>ivikasavnish@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <span><a href="https://linkedin.com/in/ivikasavnish" class="project-link" target="_blank">linkedin.com/in/ivikasavnish</a></span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>India</span>
             </div>
         </div>
     </div>
@@ -207,21 +228,32 @@
                 <div class="experience-org">Ayoconnect</div>
                 <div class="experience-period">May 2022 – November 2023 (1 year 7 months)</div>
                 <div class="experience-location">India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Built and maintained backend microservices for Indonesia's open finance platform.<br>
+                    Contributed to API integrations with banking and fintech partners using Golang.<br>
+                    Improved system reliability and reduced latency in payment and financial data pipelines.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Software Developer</div>
                 <div class="experience-org">ValueLabs</div>
                 <div class="experience-period">March 2021 – May 2022 (1 year 3 months)</div>
                 <div class="experience-location">Hyderabad, Telangana, India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Developed and maintained enterprise software solutions for global clients.<br>
+                    Worked on backend services using Golang and Python; collaborated in agile teams.<br>
+                    Contributed to code reviews, testing, and CI/CD pipeline improvements.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Golang Developer</div>
                 <div class="experience-org">Freelance</div>
                 <div class="experience-period">September 2020 – May 2022 (1 year 9 months)</div>
                 <div class="experience-location">Gurugram, Haryana, India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Delivered custom Golang-based automation tools, CLI utilities, and backend APIs for various clients.<br>
+                    Focused on concurrency patterns, performance optimization, and clean architecture.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Python Developer</div>
@@ -238,21 +270,30 @@
                 <div class="experience-org">Credihealth</div>
                 <div class="experience-period">October 2018 – August 2019 (11 months)</div>
                 <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Analyzed large datasets to drive product and marketing decisions.<br>
+                    Built dashboards and reports to monitor key business metrics.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Digital Marketing Manager</div>
                 <div class="experience-org">Credihealth</div>
                 <div class="experience-period">April 2018 – August 2019 (1 year 5 months)</div>
                 <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Led digital marketing initiatives including SEO, SEM, and social media campaigns.<br>
+                    Managed cross-functional teams to execute data-driven growth strategies.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Digital Marketing Specialist</div>
                 <div class="experience-org">Credihealth</div>
                 <div class="experience-period">February 2017 – March 2018 (1 year 2 months)</div>
                 <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc"></div>
+                <div class="experience-desc">
+                    Executed SEO and performance marketing strategies, improving organic search rankings.<br>
+                    Collaborated with content and design teams to optimize conversion funnels.
+                </div>
             </li>
             <li class="experience-item">
                 <div class="experience-role">Digital Specialist</div>
@@ -357,5 +398,8 @@
             </li>
         </ul>
     </section>
+    <footer>
+        &copy; 2026 Vikas Avnish &mdash; <a href="https://github.com/ivikasavnish" class="project-link" target="_blank">github.com/ivikasavnish</a>
+    </footer>
 </body>
 </html>
