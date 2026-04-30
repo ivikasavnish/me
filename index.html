@@ -3,403 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Avnish - Senior Software Engineer</title>
+    <title>Vikas Avnish — Senior Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* ── Design tokens ─────────────────────────────────────── */
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-color: #1f2937;
-            --text-secondary: #6b7280;
-            --light-bg: #f8fafc;
-            --border-color: #e2e8f0;
-            --success-color: #059669;
+            --ink:        #0f172a;
+            --ink-muted:  #475569;
+            --ink-faint:  #94a3b8;
+            --blue:       #1d4ed8;
+            --blue-light: #eff6ff;
+            --blue-mid:   #bfdbfe;
+            --teal:       #0f766e;
+            --teal-light: #f0fdfa;
+            --border:     #e2e8f0;
+            --surface:    #f8fafc;
+            --white:      #ffffff;
+            --radius:     8px;
+            --shadow:     0 1px 4px rgba(15,23,42,.07);
         }
+
+        /* ── Reset & base ──────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 15px; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            max-width: 1000px;
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.65;
+            color: var(--ink);
+            background: #eef2f7;
+            padding: 2rem 1rem;
+        }
+
+        /* ── Page wrapper ──────────────────────────────────────── */
+        .page {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
-            background: white;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 3px solid var(--primary-color);
-        }
-        .name {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-        .title {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            justify-items: center;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1rem;
-        }
-        .section {
-            margin-bottom: 2.5rem;
-        }
-        .section-title {
-            font-size: 1.75rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--border-color);
-            font-weight: 600;
-        }
-        .professional-summary {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-color);
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-        }
-        .summary-paragraph {
-            margin-bottom: 1.5rem;
-        }
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        .skill-category {
-            background: var(--light-bg);
-            padding: 1.5rem;
+            background: var(--white);
             border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(15,23,42,.12);
+            overflow: hidden;
         }
-        .projects-list, .gists-list {
-            list-style: none;
-            padding-left: 0;
+
+        /* ── Header / Hero ─────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #0284c7 100%);
+            color: var(--white);
+            padding: 2.5rem 3rem 2rem;
         }
-        .project-item, .gist-item {
-            margin-bottom: 1.5rem;
-            background: var(--light-bg);
-            padding: 1.25rem 1rem;
-            border-left: 4px solid var(--primary-color);
-            border-radius: 8px;
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
-        .project-title, .gist-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--secondary-color);
+        .hero-name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
-        .project-link, .gist-link {
-            color: var(--accent-color);
+        .hero-title {
+            font-size: 1.05rem;
+            font-weight: 400;
+            opacity: .88;
+            margin-top: .35rem;
+        }
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .55rem 1.1rem;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 6px;
+            color: var(--white);
+            font-size: .85rem;
+            font-weight: 500;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: 500;
+            transition: background .2s;
+            white-space: nowrap;
         }
-        .project-link:hover, .gist-link:hover {
-            text-decoration: underline;
+        .print-btn:hover { background: rgba(255,255,255,.28); }
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem 1.6rem;
+            margin-top: 1.4rem;
+            font-size: .875rem;
+            opacity: .92;
         }
-        /* Experience styles */
-        .experience-list {
-            list-style: none;
-            padding-left: 0;
+        .contact-row a { color: inherit; text-decoration: none; }
+        .contact-row a:hover { text-decoration: underline; }
+        .contact-row span { display: flex; align-items: center; gap: .4rem; }
+
+        /* ── Main content ──────────────────────────────────────── */
+        .main { padding: 2.5rem 3rem; }
+
+        /* ── Section ───────────────────────────────────────────── */
+        .section { margin-bottom: 2.25rem; }
+        .section-title {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            border-bottom: 2px solid var(--blue-mid);
+            padding-bottom: .35rem;
+            margin-bottom: 1.25rem;
         }
-        .experience-item {
-            margin-bottom: 1.5rem;
-            background: var(--light-bg);
-            padding: 1.25rem 1rem;
-            border-left: 4px solid var(--success-color);
-            border-radius: 8px;
+
+        /* ── Summary ───────────────────────────────────────────── */
+        .summary {
+            font-size: .95rem;
+            line-height: 1.75;
+            color: var(--ink);
+            background: var(--blue-light);
+            border-left: 3px solid var(--blue);
+            padding: 1rem 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
         }
-        .experience-org {
+        .summary p + p { margin-top: .75rem; }
+
+        /* ── Skills ────────────────────────────────────────────── */
+        .skill-groups { display: flex; flex-direction: column; gap: .7rem; }
+        .skill-group { display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap; }
+        .skill-label {
+            font-size: .8rem;
             font-weight: 600;
-            color: var(--success-color);
+            color: var(--ink-muted);
+            min-width: 130px;
+            flex-shrink: 0;
         }
-        .experience-role {
-            font-size: 1.15rem;
-            color: var(--text-color);
+        .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+        .tag {
+            font-size: .78rem;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--ink);
+            padding: .2rem .6rem;
+            border-radius: 4px;
         }
-        .experience-period {
-            font-size: 0.98rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+        .tag-blue { background: var(--blue-light); border-color: var(--blue-mid); color: var(--blue); }
+        .tag-teal { background: var(--teal-light); border-color: #99f6e4; color: var(--teal); }
+
+        /* ── Experience timeline ───────────────────────────────── */
+        .timeline { list-style: none; padding: 0; position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: var(--border);
         }
-        .experience-location {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
+        .tl-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.6rem;
         }
-        .experience-desc {
-            color: var(--text-color);
-            margin-top: 0.25rem;
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--blue);
+            z-index: 1;
         }
+        .tl-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: .5rem;
+            flex-wrap: wrap;
+        }
+        .tl-role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .tl-period {
+            font-size: .8rem;
+            color: var(--ink-faint);
+            white-space: nowrap;
+        }
+        .tl-org {
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--teal);
+            margin-top: .1rem;
+        }
+        .tl-location {
+            font-size: .8rem;
+            color: var(--ink-faint);
+        }
+        .tl-desc {
+            margin-top: .5rem;
+            font-size: .88rem;
+            color: var(--ink-muted);
+        }
+        .tl-desc ul {
+            padding-left: 1.1rem;
+            margin-top: .25rem;
+        }
+        .tl-desc li { margin-bottom: .2rem; }
+
+        /* ── Projects & Gists cards ─────────────────────────────── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.1rem;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .card:hover { box-shadow: var(--shadow); border-color: var(--blue-mid); }
+        .card-title {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: .3rem;
+        }
+        .card-title a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+        .card-title a:hover { text-decoration: underline; }
+        .card-desc { font-size: .83rem; color: var(--ink-muted); line-height: 1.55; }
+
+        /* ── Footer ─────────────────────────────────────────────── */
         footer {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--ink-faint);
+            font-size: .8rem;
         }
+        footer a { color: var(--blue); text-decoration: none; }
+
+        /* ── Print styles ───────────────────────────────────────── */
         @media print {
-            body { padding: 1rem; }
-            .project-link, .gist-link { color: var(--text-color); text-decoration: none; }
-            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: var(--text-secondary); }
+            @page { margin: 1.5cm 1.8cm; size: A4; }
+            body { background: white; padding: 0; font-size: 11pt; }
+            .page { box-shadow: none; border-radius: 0; }
+            .hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; padding: 1.5rem 2rem 1.2rem; }
+            .main { padding: 1.5rem 2rem; }
+            .print-btn { display: none; }
+            .card:hover { box-shadow: none; border-color: var(--border); }
+            a { color: inherit !important; text-decoration: none !important; }
+            .section { page-break-inside: avoid; }
+            .tl-item { page-break-inside: avoid; }
+        }
+
+        /* ── Responsive ─────────────────────────────────────────── */
+        @media (max-width: 620px) {
+            .hero { padding: 1.75rem 1.5rem 1.25rem; }
+            .hero-name { font-size: 1.85rem; }
+            .main { padding: 1.75rem 1.5rem; }
+            .skill-label { min-width: 100px; }
+            .card-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="name">Vikas Avnish</div>
-        <div class="title">Senior Software Engineer — Golang & Python Specialist</div>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <span>🌐</span>
-                <span><a href="https://github.com/ivikasavnish" class="project-link" target="_blank">github.com/ivikasavnish</a></span>
-            </div>
-            <div class="contact-item">
-                <span>📧</span>
-                <span>ivikasavnish@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <span>🔗</span>
-                <span><a href="https://linkedin.com/in/ivikasavnish" class="project-link" target="_blank">linkedin.com/in/ivikasavnish</a></span>
-            </div>
-            <div class="contact-item">
-                <span>📍</span>
-                <span>India</span>
-            </div>
-        </div>
-    </div>
-    <section class="section">
-        <div class="section-title">Professional Summary</div>
-        <div class="professional-summary">
-            <div class="summary-paragraph">Creative, solution-oriented software engineer with a passion for building robust, efficient, and scalable systems. Highly active in the open-source community[...]
-            <div class="summary-paragraph">Known for delivering minimalist and maintainable solutions in civic tech, finance, and productivity automation. Interested in building small, efficient LLM ([...]
-        </div>
-    </section>
+<div class="page">
 
-    <!-- Experience Section: All Roles Chronologically -->
-    <section class="section">
-        <div class="section-title">Experience</div>
-        <ul class="experience-list">
-            <li class="experience-item">
-                <div class="experience-role">Software Engineer (Adhoc)</div>
-                <div class="experience-org">Jarvis Technology and Strategy Consulting</div>
-                <div class="experience-period">Feb 2025 – Present</div>
-                <div class="experience-location"></div>
-                <div class="experience-desc">
-                    Developing voter module for the biggest political party in India and an internal communication tool (CRM SARAL) on an adhoc basis. Delivering mission-critical solutions for civic technology and enterprise communication.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Senior Software Developer</div>
-                <div class="experience-org">Sageit Private LTD</div>
-                <div class="experience-period">July 2024 – January 2025 (7 months)</div>
-                <div class="experience-location">Pune, Maharashtra, India</div>
-                <div class="experience-desc">
-                    Architected and implemented comprehensive monitoring for ACI Worldwide's Base24 payment stack.<br>
-                    Developed custom probes in Golang for HTTP/TCP monitoring; advanced metrics extraction.<br>
-                    Built automated system health checks and process monitoring tools for critical payment infrastructure.<br>
-                    Designed Prometheus-based alerting and metrics system.<br>
-                    Created technical documentation (design, deployment, troubleshooting).<br>
-                    Implemented DB performance monitoring and health tracking.<br>
-                    Developed bash execution framework for diagnostic automations.<br>
-                    Achieved 99.9% monitoring accuracy for payment infrastructure.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Software Engineer</div>
-                <div class="experience-org">Ayoconnect</div>
-                <div class="experience-period">May 2022 – November 2023 (1 year 7 months)</div>
-                <div class="experience-location">India</div>
-                <div class="experience-desc">
-                    Built and maintained backend microservices for Indonesia's open finance platform.<br>
-                    Contributed to API integrations with banking and fintech partners using Golang.<br>
-                    Improved system reliability and reduced latency in payment and financial data pipelines.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Software Developer</div>
-                <div class="experience-org">ValueLabs</div>
-                <div class="experience-period">March 2021 – May 2022 (1 year 3 months)</div>
-                <div class="experience-location">Hyderabad, Telangana, India</div>
-                <div class="experience-desc">
-                    Developed and maintained enterprise software solutions for global clients.<br>
-                    Worked on backend services using Golang and Python; collaborated in agile teams.<br>
-                    Contributed to code reviews, testing, and CI/CD pipeline improvements.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Golang Developer</div>
-                <div class="experience-org">Freelance</div>
-                <div class="experience-period">September 2020 – May 2022 (1 year 9 months)</div>
-                <div class="experience-location">Gurugram, Haryana, India</div>
-                <div class="experience-desc">
-                    Delivered custom Golang-based automation tools, CLI utilities, and backend APIs for various clients.<br>
-                    Focused on concurrency patterns, performance optimization, and clean architecture.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Python Developer</div>
-                <div class="experience-org">Wizikey</div>
-                <div class="experience-period">August 2019 – August 2020 (1 year 1 month)</div>
-                <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc">
-                    Developed and deployed News Crawler System with Scrapy, Redis, S3, Elasticsearch, and MySQL.<br>
-                    Deployment with Docker, AWS, Jenkins, Git; CI/CD enabled rapid updates.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Data Analyst</div>
-                <div class="experience-org">Credihealth</div>
-                <div class="experience-period">October 2018 – August 2019 (11 months)</div>
-                <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc">
-                    Analyzed large datasets to drive product and marketing decisions.<br>
-                    Built dashboards and reports to monitor key business metrics.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Digital Marketing Manager</div>
-                <div class="experience-org">Credihealth</div>
-                <div class="experience-period">April 2018 – August 2019 (1 year 5 months)</div>
-                <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc">
-                    Led digital marketing initiatives including SEO, SEM, and social media campaigns.<br>
-                    Managed cross-functional teams to execute data-driven growth strategies.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Digital Marketing Specialist</div>
-                <div class="experience-org">Credihealth</div>
-                <div class="experience-period">February 2017 – March 2018 (1 year 2 months)</div>
-                <div class="experience-location">Gurgaon, India</div>
-                <div class="experience-desc">
-                    Executed SEO and performance marketing strategies, improving organic search rankings.<br>
-                    Collaborated with content and design teams to optimize conversion funnels.
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Digital Specialist</div>
-                <div class="experience-org">AMICI Global Solutions PVT. LTD.</div>
-                <div class="experience-period">October 2015 – February 2017 (1 year 5 months)</div>
-                <div class="experience-desc">
-                    SEO, SMO, Analytics.<br>
-                    Website design and development (Consulting); Content Development (Consulting); Digital Marketing (Main Work); Analytics (Main Work).
-                </div>
-            </li>
-            <li class="experience-item">
-                <div class="experience-role">Marketing Analyst</div>
-                <div class="experience-org">GemPundit.com</div>
-                <div class="experience-period">December 2014 – September 2015 (10 months)</div>
-                <div class="experience-desc">
-                    Conducted marketing activities and performance analysis for strategic planning.
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <div class="section-title">Skills</div>
-        <div class="skill-grid">
-            <div class="skill-category">
-                <strong>Golang</strong><br>
-                Microservices, CLI tools, concurrency, API backends, automation
+    <!-- ── HERO ─────────────────────────────────────────────────── -->
+    <header class="hero">
+        <div class="hero-top">
+            <div>
+                <div class="hero-name">Vikas Avnish</div>
+                <div class="hero-title">Senior Software Engineer &nbsp;·&nbsp; Golang &amp; Python Specialist</div>
             </div>
-            <div class="skill-category">
-                <strong>Python</strong><br>
-                Automation, scripting, data processing, machine learning, APIs
-            </div>
-            <div class="skill-category">
-                <strong>Open Source</strong><br>
-                Collaboration, rapid prototyping, code review, mentoring
-            </div>
-            <div class="skill-category">
-                <strong>Problem Solving</strong><br>
-                Efficient algorithms, minimalist design, task automation
-            </div>
+            <button class="print-btn" onclick="window.print()">⬇ Download PDF</button>
         </div>
-    </section>
-    <section class="section">
-        <div class="section-title">Highlighted Projects</div>
-        <ul class="projects-list">
-            <li class="project-item">
-                <span class="project-title">voter-outreach-go</span> — 
-                <a class="project-link" href="https://github.com/jarvisconsulting/voter-outreach-go" target="_blank">View on GitHub</a>
-                <div>
-                    Go-based platform for efficient, scalable civic engagement and voter outreach automation.
+        <div class="contact-row">
+            <span>📧 <a href="mailto:ivikasavnish@gmail.com">ivikasavnish@gmail.com</a></span>
+            <span>🌐 <a href="https://github.com/ivikasavnish" target="_blank">github.com/ivikasavnish</a></span>
+            <span>🔗 <a href="https://linkedin.com/in/ivikasavnish" target="_blank">linkedin.com/in/ivikasavnish</a></span>
+            <span>📍 India</span>
+        </div>
+    </header>
+
+    <!-- ── BODY ─────────────────────────────────────────────────── -->
+    <div class="main">
+
+        <!-- Summary -->
+        <section class="section">
+            <div class="section-title">Professional Summary</div>
+            <div class="summary">
+                <p>Creative, solution-oriented software engineer with 8+ years of experience building robust, efficient, and scalable backend systems. Highly active open-source contributor with expertise in Golang microservices, Python automation, and distributed infrastructure monitoring. Proven track record delivering mission-critical solutions in fintech, civic tech, and enterprise SaaS.</p>
+                <p>Known for minimalist, maintainable design and deep specialisation in concurrency patterns, payment infrastructure observability (Prometheus / Grafana), and developer tooling. Currently exploring small-footprint LLM applications and agentic automation workflows.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section">
+            <div class="section-title">Skills</div>
+            <div class="skill-groups">
+                <div class="skill-group">
+                    <span class="skill-label">Languages</span>
+                    <div class="tags">
+                        <span class="tag tag-blue">Go</span>
+                        <span class="tag tag-blue">Python</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Rust (learning)</span>
+                    </div>
                 </div>
-            </li>
-            <li class="project-item">
-                <span class="project-title">trader-python-implementation</span> — 
-                <a class="project-link" href="https://github.com/ivikasavnish/trader-python-implementation" target="_blank">View on GitHub</a>
-                <div>
-                    Developed trading algorithms in Python with focus on performance and rapid experimentation.
+                <div class="skill-group">
+                    <span class="skill-label">Backend &amp; APIs</span>
+                    <div class="tags">
+                        <span class="tag tag-blue">Microservices</span>
+                        <span class="tag">REST / gRPC</span>
+                        <span class="tag">Gin</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Scrapy</span>
+                        <span class="tag">TOTP / Auth</span>
+                    </div>
                 </div>
-            </li>
-            <li class="project-item">
-                <span class="project-title">voters-outreach</span> — 
-                <a class="project-link" href="https://github.com/jarvisconsulting/voters-outreach" target="_blank">View on GitHub</a>
-                <div>
-                    Community engagement/outreach tools, backend automation in Golang.
+                <div class="skill-group">
+                    <span class="skill-label">Infra &amp; Observability</span>
+                    <div class="tags">
+                        <span class="tag tag-teal">Prometheus</span>
+                        <span class="tag tag-teal">Grafana</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Istio</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Elasticsearch</span>
+                    </div>
                 </div>
-            </li>
-            <li class="project-item">
-                <span class="project-title">jira-manager</span> — 
-                <a class="project-link" href="https://github.com/ivikasavnish/jira-manager" target="_blank">View on GitHub</a>
-                <div>
-                    Python tools to automate Jira tasks and integrate with CI/CD pipelines.
+                <div class="skill-group">
+                    <span class="skill-label">Databases</span>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Redis</span>
+                    </div>
                 </div>
-            </li>
-            <li class="project-item">
-                <span class="project-title">LLM Mini Apps & Tuning Experiments</span>
-                <div>
-                    Personal explorations in building small, efficient LLM-powered applications and tuning workflows, influenced by the PocketLLM open-source community and similar projects.
+                <div class="skill-group">
+                    <span class="skill-label">Tooling &amp; Workflow</span>
+                    <div class="tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Jira</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">MCP</span>
+                        <span class="tag">LLM fine-tuning</span>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </section>
-    <section class="section">
-        <div class="section-title">Featured Gists</div>
-        <ul class="gists-list">
-            <li class="gist-item">
-                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/3fea84c2ed56e119ff931f404eb562d1" target="_blank">Python Daemon Manager</a></span>
-                <div>
-                    One-line installer CLI tool for managing Python daemons. Features color-coded logging, automatic Python version detection, and simple start/stop/restart commands from the terminal.
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <div class="section-title">Experience</div>
+            <ul class="timeline">
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Software Engineer (Adhoc)</span>
+                        <span class="tl-period">Feb 2025 – Present</span>
+                    </div>
+                    <div class="tl-org">Jarvis Technology and Strategy Consulting</div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Built the voter outreach module for India's largest political party, handling millions of constituent records.</li>
+                            <li>Developed CRM SARAL — an internal communication platform for enterprise-scale political operations.</li>
+                            <li>Delivered mission-critical civic tech solutions under tight deadlines using Golang and Python.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Senior Software Developer</span>
+                        <span class="tl-period">Jul 2024 – Jan 2025</span>
+                    </div>
+                    <div class="tl-org">Sageit Private LTD &nbsp;<span class="tl-location">· Pune, India</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Architected end-to-end observability for ACI Worldwide's Base24 payment stack; achieved 99.9% monitoring accuracy.</li>
+                            <li>Wrote custom Golang probes for HTTP/TCP health checks and advanced metrics extraction.</li>
+                            <li>Designed Prometheus-based alerting pipeline and built automated DB performance health-tracking.</li>
+                            <li>Created a bash execution framework for diagnostic automations; authored full technical documentation.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Software Engineer</span>
+                        <span class="tl-period">May 2022 – Nov 2023</span>
+                    </div>
+                    <div class="tl-org">Ayoconnect &nbsp;<span class="tl-location">· Indonesia's Open Finance Platform</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Built and maintained Golang backend microservices powering Indonesia's open banking platform.</li>
+                            <li>Contributed to API integrations with 20+ banking and fintech partners, reducing integration time by 30%.</li>
+                            <li>Improved system reliability and reduced latency in payment and financial data pipelines.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Software Developer</span>
+                        <span class="tl-period">Mar 2021 – May 2022</span>
+                    </div>
+                    <div class="tl-org">ValueLabs &nbsp;<span class="tl-location">· Hyderabad, India</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Developed enterprise backend services in Golang and Python for global clients.</li>
+                            <li>Contributed to CI/CD pipeline improvements, code reviews, and cross-team agile ceremonies.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Golang Developer</span>
+                        <span class="tl-period">Sep 2020 – May 2022</span>
+                    </div>
+                    <div class="tl-org">Freelance &nbsp;<span class="tl-location">· Gurugram, India</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Delivered custom CLI utilities, automation tools, and backend APIs for multiple clients.</li>
+                            <li>Specialised in Go concurrency patterns, performance optimisation, and clean architecture.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Python Developer</span>
+                        <span class="tl-period">Aug 2019 – Aug 2020</span>
+                    </div>
+                    <div class="tl-org">Wizikey &nbsp;<span class="tl-location">· Gurgaon, India</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Built and deployed a large-scale News Crawler using Scrapy, Redis, S3, Elasticsearch, and MySQL.</li>
+                            <li>Managed CI/CD with Docker, AWS, Jenkins enabling continuous delivery.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Data Analyst &amp; Digital Marketing Manager</span>
+                        <span class="tl-period">Feb 2017 – Aug 2019</span>
+                    </div>
+                    <div class="tl-org">Credihealth &nbsp;<span class="tl-location">· Gurgaon, India</span></div>
+                    <div class="tl-desc">
+                        <ul>
+                            <li>Analysed large datasets to guide product and marketing decisions; built performance dashboards.</li>
+                            <li>Led digital marketing (SEO, SEM, social) and managed cross-functional growth teams.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Digital Specialist</span>
+                        <span class="tl-period">Oct 2015 – Feb 2017</span>
+                    </div>
+                    <div class="tl-org">AMICI Global Solutions</div>
+                    <div class="tl-desc">SEO, SMO, analytics, website consulting, and content strategy.</div>
+                </li>
+
+                <li class="tl-item">
+                    <div class="tl-header">
+                        <span class="tl-role">Marketing Analyst</span>
+                        <span class="tl-period">Dec 2014 – Sep 2015</span>
+                    </div>
+                    <div class="tl-org">GemPundit.com</div>
+                    <div class="tl-desc">Marketing activities and performance analysis for strategic planning.</div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <div class="section-title">Open-Source Projects</div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/jarvisconsulting/voter-outreach-go" target="_blank">voter-outreach-go</a></div>
+                    <div class="card-desc">Scalable Golang platform for civic engagement and voter outreach automation at political-party scale.</div>
                 </div>
-            </li>
-            <li class="gist-item">
-                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/f07a1af57f7fd6149fe5038dd34d4bd6" target="_blank">Git Cherry Pick Extension with Jira</a></span>
-                <div>
-                    A Git extension to track merges and cherry-pick commits with Jira integration. Provides interactive commit selection enriched with Jira ticket info, status commands, and automated conflict resolution.
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/microproxy" target="_blank">microproxy</a></div>
+                    <div class="card-desc">Lightweight Go reverse-proxy and request-routing micro-service for API gateway scenarios.</div>
                 </div>
-            </li>
-            <li class="gist-item">
-                <span class="gist-title"><a class="gist-link" href="https://gist.github.com/ivikasavnish/fac2a05d24bbc5a67a01f38faf970b14" target="_blank">Git Pre-Commit Hooks Setup</a></span>
-                <div>
-                    Idempotent script for configuring git pre-commit hooks: enforces Jira ticket presence in commit messages, runs Docker builds on push, and only activates in dev/preview environments to keep CI clean.
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/totp" target="_blank">totp</a></div>
+                    <div class="card-desc">Golang TOTP (RFC 6238) implementation — minimal, dependency-free two-factor auth library.</div>
                 </div>
-            </li>
-        </ul>
-    </section>
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/supercsv-go" target="_blank">supercsv-go</a></div>
+                    <div class="card-desc">High-performance CSV processing library in Go with streaming, transformation, and validation support.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/jira-manager" target="_blank">jira-manager</a></div>
+                    <div class="card-desc">Python CLI to automate Jira issue management and integrate with CI/CD pipelines.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/devollama" target="_blank">devollama</a></div>
+                    <div class="card-desc">Developer-focused Ollama wrapper for running local LLMs with structured prompts and tool-calling.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gists -->
+        <section class="section">
+            <div class="section-title">Featured Gists</div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title"><a href="https://gist.github.com/ivikasavnish/3fea84c2ed56e119ff931f404eb562d1" target="_blank">Python Daemon Manager</a></div>
+                    <div class="card-desc">One-line installer CLI for managing Python daemons with color-coded logging and automatic version detection.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><a href="https://gist.github.com/ivikasavnish/f07a1af57f7fd6149fe5038dd34d4bd6" target="_blank">Git Cherry-Pick + Jira</a></div>
+                    <div class="card-desc">Git extension for interactive cherry-picking enriched with Jira ticket metadata and automated conflict resolution.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><a href="https://gist.github.com/ivikasavnish/fac2a05d24bbc5a67a01f38faf970b14" target="_blank">Git Pre-Commit Hooks Setup</a></div>
+                    <div class="card-desc">Idempotent hook installer: enforces Jira ticket IDs in commit messages and runs Docker builds on push.</div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /main -->
+
     <footer>
-        &copy; 2026 Vikas Avnish &mdash; <a href="https://github.com/ivikasavnish" class="project-link" target="_blank">github.com/ivikasavnish</a>
+        &copy; 2026 Vikas Avnish &nbsp;&mdash;&nbsp;
+        <a href="https://github.com/ivikasavnish" target="_blank">github.com/ivikasavnish</a>
     </footer>
+
+</div><!-- /page -->
 </body>
 </html>
