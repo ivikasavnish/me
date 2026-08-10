@@ -245,6 +245,78 @@
         .card-title a:hover { text-decoration: underline; }
         .card-desc { font-size: .83rem; color: var(--ink-muted); line-height: 1.55; }
 
+        /* ── Recent work & roadmap ──────────────────────────────── */
+        .work-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 170px;
+        }
+        .recent-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .75rem;
+            margin-bottom: .65rem;
+        }
+        .work-date {
+            font-size: .72rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--ink-faint);
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            width: fit-content;
+            border-radius: 999px;
+            padding: .18rem .55rem;
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .03em;
+            text-transform: uppercase;
+        }
+        .status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+        .status-shipped { color: var(--teal); background: var(--teal-light); }
+        .status-active { color: var(--blue); background: var(--blue-light); }
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .35rem;
+            margin-top: auto;
+            padding-top: .85rem;
+        }
+        .work-tags .tag { font-size: .68rem; padding: .12rem .45rem; }
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            counter-reset: roadmap;
+        }
+        .roadmap-item {
+            counter-increment: roadmap;
+            position: relative;
+            border-top: 3px solid var(--blue-mid);
+            background: linear-gradient(180deg, var(--blue-light), var(--white));
+            padding: 1rem;
+            border-radius: 0 0 var(--radius) var(--radius);
+        }
+        .roadmap-item::before {
+            content: '0' counter(roadmap);
+            display: block;
+            margin-bottom: .65rem;
+            color: var(--blue);
+            font: 600 .72rem 'JetBrains Mono', monospace;
+        }
+        .roadmap-title { font-size: .92rem; font-weight: 600; margin-bottom: .35rem; }
+        .roadmap-desc { color: var(--ink-muted); font-size: .8rem; line-height: 1.55; }
+
         /* ── Footer ─────────────────────────────────────────────── */
         footer {
             text-align: center;
@@ -276,6 +348,8 @@
             .main { padding: 1.75rem 1.5rem; }
             .skill-label { min-width: 100px; }
             .card-grid { grid-template-columns: 1fr; }
+            .recent-grid { grid-template-columns: 1fr; }
+            .roadmap { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -292,7 +366,8 @@
             <button class="print-btn" onclick="window.print()">⬇ Download PDF</button>
         </div>
         <div class="contact-row">
-            <span>📧 <a href="mailto:devops.avnish@gmail.com">devops.avnish@gmail.com</a> | <a href="mailto:vikas.avnish@servloci.in">vikas.avnish@servloci.in</a></span>
+            <span>📧 <a href="mailto:devops.avnish@gmail.com">devops.avnish@gmail.com</a></span>
+            <span>💼 <a href="mailto:vikas.avnish@servloci.in">vikas.avnish@servloci.in</a></span>
             <span>🌐 <a href="https://github.com/ivikasavnish" target="_blank">github.com/ivikasavnish</a></span>
             <span>🔗 <a href="https://linkedin.com/in/ivikasavnish" target="_blank">linkedin.com/in/ivikasavnish</a></span>
             <span>📍 India</span>
@@ -371,6 +446,84 @@
                         <span class="tag">LLM fine-tuning</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Recent Work -->
+        <section class="section">
+            <div class="section-title">Recent Work</div>
+            <div class="card-grid recent-grid">
+                <article class="card work-card">
+                    <div class="card-meta">
+                        <span class="status status-shipped">Latest</span>
+                        <time class="work-date" datetime="2026-08">Aug 2026</time>
+                    </div>
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/algo-trading-notebooks" target="_blank" rel="noopener noreferrer">ServLoci Algo Trading Notebooks</a></div>
+                    <div class="card-desc">A hands-on Colab series covering SDK setup, broker authentication, options pricing and strategies, backtesting, risk sizing, and an algorithmic-trading bot capstone.</div>
+                    <div class="work-tags">
+                        <span class="tag tag-blue">Jupyter</span>
+                        <span class="tag">Python</span>
+                        <span class="tag tag-teal">Trading Systems</span>
+                    </div>
+                </article>
+                <article class="card work-card">
+                    <div class="card-meta">
+                        <span class="status status-active">Active</span>
+                        <time class="work-date" datetime="2026-02">Feb 2026</time>
+                    </div>
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/agenticide-go" target="_blank" rel="noopener noreferrer">Agenticide</a></div>
+                    <div class="card-desc">A Go-based agentic development assistant with task orchestration, an extension marketplace, SQLite-backed state, and CLI, terminal, server, and web launch modes.</div>
+                    <div class="work-tags">
+                        <span class="tag tag-blue">Go</span>
+                        <span class="tag">AI Agents</span>
+                        <span class="tag">Developer Tools</span>
+                    </div>
+                </article>
+                <article class="card work-card">
+                    <div class="card-meta">
+                        <span class="status status-shipped">Released</span>
+                        <time class="work-date" datetime="2026-02">Feb 2026</time>
+                    </div>
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/gpp" target="_blank" rel="noopener noreferrer">gpp — Go with Decorators</a></div>
+                    <div class="card-desc">An experimental Go compiler layer that adds Python-style decorators, including parameterised and stacked decorators, while preserving familiar Go workflows.</div>
+                    <div class="work-tags">
+                        <span class="tag tag-blue">Go</span>
+                        <span class="tag">Compiler Tooling</span>
+                        <span class="tag">Language Design</span>
+                    </div>
+                </article>
+                <article class="card work-card">
+                    <div class="card-meta">
+                        <span class="status status-shipped">Released</span>
+                        <time class="work-date" datetime="2026-02">Feb 2026</time>
+                    </div>
+                    <div class="card-title"><a href="https://github.com/ivikasavnish/gopubsub" target="_blank" rel="noopener noreferrer">gopubsub</a></div>
+                    <div class="card-desc">A lightweight, thread-safe in-memory pub-sub library with broadcast delivery, targeted receivers, message history, filtering, and replay-friendly APIs.</div>
+                    <div class="work-tags">
+                        <span class="tag tag-blue">Go</span>
+                        <span class="tag">Event Systems</span>
+                        <span class="tag tag-teal">Open Source</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Upcoming Work -->
+        <section class="section">
+            <div class="section-title">Upcoming Work</div>
+            <div class="roadmap">
+                <article class="roadmap-item">
+                    <div class="roadmap-title">Trading Systems Lab</div>
+                    <div class="roadmap-desc">Turn the ServLoci notebook series into a repeatable learning path with richer strategy examples, broker integrations, testing, and risk controls.</div>
+                </article>
+                <article class="roadmap-item">
+                    <div class="roadmap-title">Agentic Developer Platform</div>
+                    <div class="roadmap-desc">Harden Agenticide's extension ecosystem, orchestration workflows, documentation, and cross-platform release experience.</div>
+                </article>
+                <article class="roadmap-item">
+                    <div class="roadmap-title">Small Go, Sharp Tools</div>
+                    <div class="roadmap-desc">Continue building focused Go infrastructure and developer tools with practical examples, benchmarks, and production-oriented packaging.</div>
+                </article>
             </div>
         </section>
 

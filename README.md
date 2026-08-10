@@ -14,7 +14,7 @@ Hosted via GitHub Pages at [ivikasavnish.github.io/me](https://ivikasavnish.gith
 
 ## Features
 
-- Professional summary, full work experience, skills, highlighted projects, and featured gists
+- Professional summary, skills, recent work, upcoming roadmap, full experience, highlighted projects, and featured gists
 - Responsive layout using CSS Grid
 - Print-friendly stylesheet
 - Zero external dependencies
